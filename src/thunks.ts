@@ -32,8 +32,9 @@ const getAxiosConfig = (query: string, page = 0): AxiosRequestConfig => {
     return {
         params: {
             'q': query,
-            'api-key': 'wTwRh7Blb0nUPWPWvHQCWVupJSoQBqeu',
+            'api-key': '',
             'page': page,
+            'fq': 'source:("The New York Times")',
             'sort': 'relevance',
         }
     };
