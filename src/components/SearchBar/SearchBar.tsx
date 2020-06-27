@@ -1,6 +1,6 @@
 import React, { SyntheticEvent } from 'react';
 import { FaSearch, FaStar } from "react-icons/fa";
-import { connect } from 'react-redux';
+
 interface SearchBarProps {
     searchArticle: Function
 }
@@ -15,7 +15,6 @@ function SearchBar(props: SearchBarProps) {
     let handleBookmarkClick = (event: React.MouseEvent) => {
         event.preventDefault();
         // TODO: implement 
-
     }
 
     return (

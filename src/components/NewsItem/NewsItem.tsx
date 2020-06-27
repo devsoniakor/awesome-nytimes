@@ -1,5 +1,5 @@
 import React from 'react';
-import { Article, MediaItem } from '../../api/models';
+import { Article, MediaItem } from '../../store/models';
 
 interface NewsItemProps {
     item: Article;
@@ -8,7 +8,7 @@ interface NewsItemProps {
 function NewsItem(props: NewsItemProps) {
 
     let renderTruncatedText = (text: string, max: number): JSX.Element => {
-        const regex = new RegExp('(\\S+\\s?)' + `{${max}}`);
+        const regex = new RegExp(`(\\S+\\s?){${max}}`);
         let m: string[] | null;
         
         if ((m = text.match(regex)) !== null) {

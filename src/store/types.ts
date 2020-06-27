@@ -1,4 +1,4 @@
-import { Article } from "../api/models";
+import { Article } from "./models";
 
 export const LOAD_ARTICLES = 'LOAD_ARTICLES';
 export const LOAD_ARTICLES_IN_PROGRESS = 'LOAD_ARTICLES_IN_PROGRESS';

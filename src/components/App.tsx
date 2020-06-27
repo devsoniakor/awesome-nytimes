@@ -1,34 +1,35 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './App.scss';
 import SearchBar from './SearchBar/SearchBar';
 import { Router } from "@reach/router"
 import ArticleList from './ArticleList/ArticleList';
-import { Article } from '../api/models';
-import article from '../components/article_sample.json';
-import { NYTimesAPI } from '../api/nytimesApi';
+import { connect } from 'react-redux';
+import { loadArticle } from '../thunks';
+import { AppState } from '../store/store';
 
+interface AppProps {
+  loadArticles: typeof loadArticle;
+}
 
-function App() {
-  let items: Article[] = [];
-  let item: Article = article;
-  items.push(item);
-  items.push(item);
-  items.push(item);
-  const api: NYTimesAPI = NYTimesAPI.Instance;
-  let queryNews = (query: string) => {
-    // api.getNews(event.target.query.value);
-    console.log('received', query);
-  }
+const App: FC<AppProps> = ( { loadArticles } ) => {
 
   return (
     <div className="container">
-      <SearchBar searchArticle={queryNews}></SearchBar>
+      <SearchBar searchArticle={loadArticles}></SearchBar>
       <Router>
-        <ArticleList path="/" items={items} />
+        <ArticleList path="/" />
       </Router>
     </div>
-
   );
 }
 
-export default App;
+
+const mapStateToProps = (store: AppState) => ({
+  articles: store.articles,
+});
+const mapDispatchToProps = (dispatch: any) => ({
+  loadArticles: (text: string) => dispatch(loadArticle(text)),
+});
+
+// export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -1,5 +1,5 @@
 import { ArticleActionType, LOAD_ARTICLES_SUCCESS, LOAD_ARTICLES_FAILED, LOAD_ARTICLES_IN_PROGRESS } from "./types";
-import { Article } from "../api/models";
+import { Article } from "./models";
 
 export const isLoading = (state = false, action: ArticleActionType): boolean => {
     switch (action.type) {

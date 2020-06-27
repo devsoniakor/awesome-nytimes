@@ -1,20 +1,20 @@
-import React from 'react';
-import { Article } from '../../api/models';
+import React, { FC } from 'react';
+import { Article } from '../../store/models';
 import NewsItem from '../NewsItem/NewsItem';
 import { RouteComponentProps } from '@reach/router';
+import { connect } from 'react-redux';
+import { AppState } from '../../store/store';
 
-interface ArticleListProps extends RouteComponentProps{
-    items: Article[]
+interface ArticleListProps extends RouteComponentProps {
+    articles: Article[],
 }
 
-function ArticleList(props: ArticleListProps)  {
+const ArticleList: FC<ArticleListProps> = ({ articles }) => {
+
     let renderItems = (): JSX.Element[] => {
         let arr: JSX.Element[] = [];
-        let key = [1,2,3,4,5,6,7];
-        let i = -1;
-        props.items.map(news => {
-            arr.push(<NewsItem key={key[++i]} item={news} />)
-            // arr.push(<NewsItem key={news._id} item={news} />)
+        articles.map(news => {
+            arr.push(<NewsItem key={news._id} item={news} />)
         })
         return arr;
     }
@@ -28,4 +28,15 @@ function ArticleList(props: ArticleListProps)  {
     );
 }
 
-export default ArticleList;
+// export default ArticleList;
+const mapStateToProps = (state: AppState) => {
+    return { articles: state.articles };
+};
+
+const mapDispatchToProps = dispatch => ({
+    // startLoadingTodos: () => dispatch(loadTodos())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ArticleList);
+// export default ArticleList;
+

@@ -3,7 +3,7 @@ import { ThunkAction } from "redux-thunk";
 import { AppState } from "./store/store";
 import { loadArticlesInProgress, loadArticlesSuccess, loadArticlesFailed } from "./store/actions";
 import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
-import { ArticleSearchResponse, Article } from "./api/models";
+import { ArticleSearchResponse, Article } from "./store/models";
 
 const API = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
 
