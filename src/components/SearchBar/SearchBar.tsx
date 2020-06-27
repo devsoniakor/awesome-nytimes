@@ -1,17 +1,20 @@
 import React, { SyntheticEvent } from 'react';
 import { FaSearch, FaStar } from "react-icons/fa";
 import { connect } from 'react-redux';
+interface SearchBarProps {
+    searchArticle: Function
+}
 
-function SearchBar(this: any) {
+function SearchBar(props: SearchBarProps) {
 
     let handleSubmit = (event: any) => {
         event.preventDefault();
-        console.log(event.target.query.value);
+        props.searchArticle(event.target.query.value);            
     }
 
     let handleBookmarkClick = (event: React.MouseEvent) => {
         event.preventDefault();
-        console.log(event);
+        // TODO: implement 
 
     }
 

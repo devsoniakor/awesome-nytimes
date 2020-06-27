@@ -1,5 +1,5 @@
 import React from 'react';
-import { Article, MediaItem } from './NewsItemModel';
+import { Article, MediaItem } from '../../api/models';
 
 interface NewsItemProps {
     item: Article;

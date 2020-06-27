@@ -9,7 +9,7 @@ export type Headline = {
     print_headline: string
 }
 
-export interface Article {
+export type Article = {
     abstract:  string,
     lead_paragraph: string,
     web_url: string,
@@ -17,4 +17,15 @@ export interface Article {
     headline: Headline,
     pub_date: string,
     _id: string
+}
+
+export type ArticleResponseData = {
+    docs: Article[],
+    meta: object
+}
+
+export type ArticleSearchResponse = {
+    status: string,
+    copyright: string,
+    response: ArticleResponseData
 }

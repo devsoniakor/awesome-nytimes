@@ -1,5 +1,5 @@
 import React from 'react';
-import { Article } from '../NewsItem/NewsItemModel';
+import { Article } from '../../api/models';
 import NewsItem from '../NewsItem/NewsItem';
 import { RouteComponentProps } from '@reach/router';
 
