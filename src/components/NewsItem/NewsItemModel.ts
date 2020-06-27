@@ -11,6 +11,7 @@ export type Headline = {
 
 export interface Article {
     abstract:  string,
+    lead_paragraph: string,
     web_url: string,
     multimedia: MediaItem[],
     headline: Headline,

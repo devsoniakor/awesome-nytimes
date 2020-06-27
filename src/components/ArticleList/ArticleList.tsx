@@ -1,4 +1,4 @@
-import React, {  } from 'react';
+import React from 'react';
 import { Article } from '../NewsItem/NewsItemModel';
 import NewsItem from '../NewsItem/NewsItem';
 import { RouteComponentProps } from '@reach/router';
@@ -20,8 +20,10 @@ function ArticleList(props: ArticleListProps)  {
     }
 
     return (
-        <div className="d-flex flex-column">
-            {renderItems()}
+        <div className="row justify-content-center">
+            <div className="col-md-8">
+                {renderItems()}
+            </div>
         </div>
     );
 }
