@@ -1,0 +1,191 @@
+            {
+                "abstract": "But the former deputy attorney general said he would not have signed an application to renew a wiretap on a former Trump adviser if he had known of its flaws.",
+                "web_url": "https://www.nytimes.com/2020/06/03/us/politics/rod-rosenstein.html",
+                "snippet": "But the former deputy attorney general said he would not have signed an application to renew a wiretap on a former Trump adviser if he had known of its flaws.",
+                "lead_paragraph": "WASHINGTON — The former deputy attorney general Rod J. Rosenstein defended during congressional testimony on Wednesday his decision to appoint a special counsel for the Trump-Russia investigation, as Republican allies of President Trump sought to keep a skeptical spotlight on the inquiry heading into the November election.",
+                "print_section": "A",
+                "print_page": "22",
+                "source": "The New York Times",
+                "multimedia": [
+                    {
+                        "rank": 0,
+                        "subtype": "xlarge",
+                        "caption": null,
+                        "credit": null,
+                        "type": "image",
+                        "url": "images/2020/06/24/us/politics/24dc-flynn/merlin_167156649_b9fce25a-ea00-4ab5-b3c8-cb294f75a2eb-articleLarge.jpg",
+                        "height": 399,
+                        "width": 600,
+                        "legacy": {
+                            "xlarge": "images/2020/06/24/us/politics/24dc-flynn/merlin_167156649_b9fce25a-ea00-4ab5-b3c8-cb294f75a2eb-articleLarge.jpg",
+                            "xlargewidth": 600,
+                            "xlargeheight": 399
+                        },
+                        "subType": "xlarge",
+                        "crop_name": "articleLarge"
+                    },
+                    {
+                        "rank": 0,
+                        "subtype": "thumbnail",
+                        "caption": null,
+                        "credit": null,
+                        "type": "image",
+                        "url": "images/2020/06/24/us/politics/24dc-flynn/24dc-flynn-thumbStandard.jpg",
+                        "height": 75,
+                        "width": 75,
+                        "legacy": {
+                            "thumbnail": "images/2020/06/24/us/politics/24dc-flynn/24dc-flynn-thumbStandard.jpg",
+                            "thumbnailwidth": 75,
+                            "thumbnailheight": 75
+                        },
+                        "subType": "thumbnail",
+                        "crop_name": "thumbStandard"
+                    }
+                ],
+                "headline": {
+                    "main": "Rod Rosenstein, Key Figure in Russia Inquiry, Defends Mueller Appointment",
+                    "kicker": null,
+                    "content_kicker": null,
+                    "print_headline": "Rosenstein Defends Naming  Special Counsel on Russia",
+                    "name": null,
+                    "seo": null,
+                    "sub": null
+                },
+                "keywords": [
+                    {
+                        "name": "subject",
+                        "value": "Russian Interference in 2016 US Elections and Ties to Trump Associates",
+                        "rank": 1,
+                        "major": "N"
+                    },
+                    {
+                        "name": "subject",
+                        "value": "United States Politics and Government",
+                        "rank": 2,
+                        "major": "N"
+                    },
+                    {
+                        "name": "subject",
+                        "value": "Special Prosecutors (Independent Counsel)",
+                        "rank": 3,
+                        "major": "N"
+                    },
+                    {
+                        "name": "subject",
+                        "value": "Wiretapping and Other Eavesdropping Devices and Methods",
+                        "rank": 4,
+                        "major": "N"
+                    },
+                    {
+                        "name": "subject",
+                        "value": "Attorneys General",
+                        "rank": 5,
+                        "major": "N"
+                    },
+                    {
+                        "name": "organizations",
+                        "value": "Federal Bureau of Investigation",
+                        "rank": 6,
+                        "major": "N"
+                    },
+                    {
+                        "name": "organizations",
+                        "value": "Justice Department",
+                        "rank": 7,
+                        "major": "N"
+                    },
+                    {
+                        "name": "organizations",
+                        "value": "Senate Committee on the Judiciary",
+                        "rank": 8,
+                        "major": "N"
+                    },
+                    {
+                        "name": "persons",
+                        "value": "Barr, William P",
+                        "rank": 9,
+                        "major": "N"
+                    },
+                    {
+                        "name": "persons",
+                        "value": "Graham, Lindsey",
+                        "rank": 10,
+                        "major": "N"
+                    },
+                    {
+                        "name": "persons",
+                        "value": "Mueller, Robert S III",
+                        "rank": 11,
+                        "major": "N"
+                    },
+                    {
+                        "name": "persons",
+                        "value": "Rosenstein, Rod J",
+                        "rank": 12,
+                        "major": "N"
+                    },
+                    {
+                        "name": "persons",
+                        "value": "Page, Carter",
+                        "rank": 13,
+                        "major": "N"
+                    },
+                    {
+                        "name": "persons",
+                        "value": "Sessions, Jefferson B III",
+                        "rank": 14,
+                        "major": "N"
+                    },
+                    {
+                        "name": "persons",
+                        "value": "Trump, Donald J",
+                        "rank": 15,
+                        "major": "N"
+                    }
+                ],
+                "pub_date": "2020-06-03T09:00:21+0000",
+                "document_type": "article",
+                "news_desk": "Washington",
+                "section_name": "U.S.",
+                "subsection_name": "Politics",
+                "byline": {
+                    "original": "By Charlie Savage, Katie Benner and Nicholas Fandos",
+                    "person": [
+                        {
+                            "firstname": "Charlie",
+                            "middlename": null,
+                            "lastname": "Savage",
+                            "qualifier": null,
+                            "title": null,
+                            "role": "reported",
+                            "organization": "",
+                            "rank": 1
+                        },
+                        {
+                            "firstname": "Katie",
+                            "middlename": null,
+                            "lastname": "Benner",
+                            "qualifier": null,
+                            "title": null,
+                            "role": "reported",
+                            "organization": "",
+                            "rank": 2
+                        },
+                        {
+                            "firstname": "Nicholas",
+                            "middlename": null,
+                            "lastname": "Fandos",
+                            "qualifier": null,
+                            "title": null,
+                            "role": "reported",
+                            "organization": "",
+                            "rank": 3
+                        }
+                    ],
+                    "organization": null
+                },
+                "type_of_material": "News",
+                "_id": "nyt://article/c78e925e-a663-5241-9bc5-93237429b595",
+                "word_count": 1334,
+                "uri": "nyt://article/c78e925e-a663-5241-9bc5-93237429b595"
+            }
