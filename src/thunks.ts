@@ -4,6 +4,7 @@ import { AppState } from "./store/store";
 import { loadArticlesInProgress, loadArticlesSuccess, loadArticlesFailed } from "./store/actions";
 import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
 import { ArticleSearchResponse, Article } from "./store/models";
+import { KEY } from "./api_key";
 
 const API = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
 
@@ -32,7 +33,7 @@ const getAxiosConfig = (query: string, page = 0): AxiosRequestConfig => {
     return {
         params: {
             'q': query,
-            'api-key': '',
+            'api-key': KEY,
             'page': page,
             'fq': 'source:("The New York Times")',
             'sort': 'relevance',
