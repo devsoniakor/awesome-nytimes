@@ -1,0 +1,23 @@
+@mixin transition($what: all, $time: 0.2s, $how: ease-in-out) {
+    -webkit-transition: $what $time $how;
+    -moz-transition:    $what $time $how;
+    -ms-transition:     $what $time $how;
+    -o-transition:      $what $time $how;
+    transition:         $what $time $how;
+}
+
+// @include transition ();
+.favourit-icon {
+    cursor: pointer;
+    font-size: 25px !important;
+    min-width: 25px;
+    left: 0;
+    top: 0;
+    z-index: 3 !important;
+    
+    @include transition (all, 0.2s, ease);
+    &:hover {
+        color: #343a40!important;
+        text-shadow: 0 0 3px #FF0000 !important;
+    }
+}

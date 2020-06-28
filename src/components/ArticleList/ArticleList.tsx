@@ -7,6 +7,7 @@ import { AiOutlineReload } from 'react-icons/ai';
 import { loadMoreArticle } from '../../thunks';
 import { FETCHING_STATUS } from '../../store/types';
 import Spinner from 'react-bootstrap/Spinner';
+import { FaRegStar } from "react-icons/fa";
 
 interface IArticleListProps {
     articles: Article[],

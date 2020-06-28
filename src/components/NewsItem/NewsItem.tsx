@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { SyntheticEvent } from 'react';
 import { Article, MediaItem } from '../../store/models';
+import { FaRegStar } from "react-icons/fa";
+import './NewsItem.scss';
 
 interface NewsItemProps {
     item: Article;
@@ -30,11 +32,12 @@ function NewsItem(props: NewsItemProps) {
                 imgSrc = `https://www.nytimes.com/${item.multimedia[0].url}`;
             }
             return (
-                <div className="card-img-top col-md-3" >
+                <div className="col-md-4">
                     <a href={props.item.web_url} target="_blank" rel="noopener noreferrer">
                         <img src={imgSrc} className="img-fluid d-block h-100 w-100" alt="image" />
                     </a>
-                </div>);
+                </div>
+            );
         } else {
             return undefined;
         }
@@ -42,18 +45,27 @@ function NewsItem(props: NewsItemProps) {
 
     let renderItem = () => {
         return (
-            <div className="card flex-row mb-3">
+            <div className="card mb-3 table-hover">
                 <div className="row no-gutters">
                     {getImage(props.item)}
-                    <div className="col p-2">
-                        <div className="card-block px-2">
-                            <h4 className="card-title">{props.item.headline.main}</h4>
+                    <div className={props.item.multimedia.length ? "col-md-8" : "col"}>
+                        <div className="card-body">
+                            <div className="d-flex">
+                                <h5 className="card-title flex-grow-1">{props.item.headline.main}</h5>
+                                <FaRegStar className="favourit-icon ml-3 mr-0 my-0 text-info" onClick={(event: SyntheticEvent) => handleFavoritClick(event)} />
+                            </div>
                             {renderCotent(props.item, 30)}
                         </div>
                     </div>
                 </div>
             </div>
-        )
+        ) 
+    }
+
+    let handleFavoritClick = (event: any) => {
+        event.preventDefault();
+
+        console.log('Icon clicked!!!')
     }
 
     return (
