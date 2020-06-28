@@ -6,7 +6,8 @@ import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
 import { ArticleSearchResponse, Article } from "./store/models";
 import { KEY } from "./api_key";
 
-const API = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
+// const API = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
+const API = 'http://localhost:4000/articlesearch.json';
 
 
 export const loadArticle = (

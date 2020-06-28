@@ -21,27 +21,31 @@ function NewsItem(props: NewsItemProps) {
         }
     }
 
-    let getImageSource = (item: Article): string => {
+    let getImage = (item: Article): JSX.Element | undefined => {
         if (item.multimedia.length > 0) {
             let tumbnail: MediaItem[] = item.multimedia.filter(el => el.subtype.includes('smallSquare252'));
+            let imgSrc = '//placehold.it/150';
             if (tumbnail.length > 0) {
-                return `https://www.nytimes.com/${tumbnail[0].url}`;
+                imgSrc = `https://www.nytimes.com/${tumbnail[0].url}`;
             } else {
-                return `https://www.nytimes.com/${item.multimedia[0].url}`;
+                imgSrc = `https://www.nytimes.com/${item.multimedia[0].url}`;
             }
+            return (
+                <div className="card-img-top col-md-3" >
+                    <a href={props.item.web_url} target="_blank" rel="noopener noreferrer">
+                        <img src={imgSrc} className="img-fluid d-block h-100 w-100" alt="image" />
+                    </a>
+                </div>);
+        } else {
+            return undefined;
         }
-        return "//placehold.it/150";
     }
 
     let renderItem = () => {
         return (
             <div className="card flex-row mb-3">
                 <div className="row no-gutters">
-                    <div className="card-img-top col-md-3" >
-                        <a href={props.item.web_url} target="_blank" rel="noopener noreferrer">
-                            <img src={getImageSource(props.item)} className="img-fluid d-block h-100 w-100" alt="image" />
-                        </a>
-                    </div>
+                    {getImage(props.item)}
                     <div className="col p-2">
                         <div className="card-block px-2">
                             <h4 className="card-title">{props.item.headline.main}</h4>

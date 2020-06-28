@@ -14,7 +14,7 @@ export const isLoading = (state = false, action: ArticleActionType): boolean => 
 }
 
 export const articles = (
-    state = [],
+    state: Article[] = [],
     action: ArticleActionType
 ): Article[] => {
     switch (action.type) {

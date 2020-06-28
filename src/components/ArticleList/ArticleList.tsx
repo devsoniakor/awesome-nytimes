@@ -44,7 +44,7 @@ const mapStateToProps = (state: AppState) => {
     return { isLoading: state.isLoading, articles: state.articles };
 };
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch: any) => ({
     // startLoadingTodos: () => dispatch(loadTodos())
 });
 
