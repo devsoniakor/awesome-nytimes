@@ -1,14 +1,16 @@
-import { ArticleActionType, LOAD_ARTICLES_SUCCESS, LOAD_ARTICLES_FAILED, LOAD_ARTICLES_IN_PROGRESS, FIND_ARTICLES_SUCCESS } from "./types";
+import { ArticleActionType, LOAD_ARTICLES_SUCCESS, LOAD_ARTICLES_FAILED, LOAD_ARTICLES_IN_PROGRESS, FIND_ARTICLES_SUCCESS, FETCHING_STATUS, FIND_ARTICLES_IN_PROGRESS } from "./types";
 import { Article } from "./models";
 
-export const isLoading = (state = false, action: ArticleActionType): boolean => {
+export const fetchingStatus = (state = FETCHING_STATUS.FETCHING_DONE, action: ArticleActionType): FETCHING_STATUS => {
     switch (action.type) {
         case LOAD_ARTICLES_IN_PROGRESS:
-            return true;
+            return FETCHING_STATUS.LOADING_IN_PROGRESS;
+        case FIND_ARTICLES_IN_PROGRESS:  
+        return FETCHING_STATUS.FINDING_IN_PROGRESS;
         case FIND_ARTICLES_SUCCESS:  
         case LOAD_ARTICLES_SUCCESS:
         case LOAD_ARTICLES_FAILED:
-            return false;
+            return FETCHING_STATUS.FETCHING_DONE;
         default:
             return state;
     }

@@ -1,7 +1,7 @@
 import { Action } from "redux";
 import { ThunkAction } from "redux-thunk";
 import { AppState } from "./store/store";
-import { loadArticlesInProgress, loadMoreArticlesSuccess, loadArticlesFailed, findArticleSuccess } from "./store/actions";
+import { loadArticlesInProgress, loadMoreArticlesSuccess, loadArticlesFailed, findArticleSuccess, findArticlesInProgress } from "./store/actions";
 import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
 import { ArticleSearchResponse, Article } from "./store/models";
 import { KEY } from "./api_key";
@@ -14,9 +14,7 @@ export const findArticle = (
     query: string = '', page: number = 0
 ): ThunkAction<void, AppState, null, Action<any>> => async dispatch => {
     try {
-        
-
-        dispatch(loadArticlesInProgress());
+        dispatch(findArticlesInProgress());
         const config = getAxiosConfig(query, page);
         const articles = await axios.get(API, config)
             .then((response: AxiosResponse<ArticleSearchResponse>) => {
