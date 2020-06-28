@@ -2,11 +2,13 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunkMiddleware from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 
-import { articles, isLoading } from "./reducers";
+import { articles, isLoading, page, query } from "./reducers";
 
 const rootReducer = combineReducers({
     articles,
-    isLoading
+    isLoading,
+    page,
+    query
 });
 
 export type AppState = ReturnType<typeof rootReducer>;

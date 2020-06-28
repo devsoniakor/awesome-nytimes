@@ -9,7 +9,6 @@ function NewsItem(props: NewsItemProps) {
 
     let renderCotent = (item: Article, max: number): JSX.Element => {
         const regex = new RegExp(`(\\S+\\s+){${max}}`);
-        console.log(regex)
         let m: string[] | null;
         const text = item.abstract;
         if ((m = text.match(regex)) !== null) {

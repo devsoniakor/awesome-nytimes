@@ -1,34 +1,37 @@
 import React, { FC } from 'react';
 import './App.scss';
 import SearchBar from './SearchBar/SearchBar';
-import { Router } from "@reach/router"
 import ArticleList from './ArticleList/ArticleList';
 import { connect } from 'react-redux';
-import { loadArticle } from '../thunks';
 import { AppState } from '../store/store';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { findArticle } from '../thunks';
 
 interface AppProps {
-  loadArticles: typeof loadArticle;
+  loadArticles: Function;
 }
 
-const App: FC<AppProps> = ( { loadArticles } ) => {
+  const App: FC<AppProps> = ({ loadArticles  }: AppProps) => {
 
   return (
     <div className="container">
       <SearchBar searchArticle={loadArticles}></SearchBar>
       <Router>
-        <ArticleList path="/" />
+         <Route path="/" component={ArticleList}/>
       </Router>
     </div>
   );
 }
 
 
-const mapStateToProps = (store: AppState) => ({
-  articles: store.articles,
+const mapStateToProps = (state: AppState) => ({
+  articles: state.articles,
+  page: state.page,
+  query: state.query
 });
+
 const mapDispatchToProps = (dispatch: any) => ({
-  loadArticles: (text: string) => dispatch(loadArticle(text)),
+  loadArticles: (query: string) => dispatch(findArticle(query)),
 });
 
 // export default App;

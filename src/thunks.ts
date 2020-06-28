@@ -1,7 +1,7 @@
 import { Action } from "redux";
 import { ThunkAction } from "redux-thunk";
 import { AppState } from "./store/store";
-import { loadArticlesInProgress, loadArticlesSuccess, loadArticlesFailed } from "./store/actions";
+import { loadArticlesInProgress, loadMoreArticlesSuccess, loadArticlesFailed, findArticleSuccess } from "./store/actions";
 import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
 import { ArticleSearchResponse, Article } from "./store/models";
 import { KEY } from "./api_key";
@@ -10,11 +10,12 @@ import { KEY } from "./api_key";
 const API = 'http://localhost:4000/articlesearch.json';
 
 
-export const loadArticle = (
-    query: string, page: number = 0
+export const findArticle = (
+    query: string = '', page: number = 0
 ): ThunkAction<void, AppState, null, Action<any>> => async dispatch => {
-    console.log('thunk!!')
     try {
+        
+
         dispatch(loadArticlesInProgress());
         const config = getAxiosConfig(query, page);
         const articles = await axios.get(API, config)
@@ -22,13 +23,35 @@ export const loadArticle = (
                 let arr: Article[] = response.data.response.docs;
                 return arr;
             });
-        dispatch(loadArticlesSuccess(articles));
+            
+        dispatch(findArticleSuccess(articles, query, page));
 
     } catch (err) {
-        console.log(err);
+        
         dispatch(loadArticlesFailed());
     }
 }
+
+export const loadMoreArticle = (
+    query: string, page: number = 0
+): ThunkAction<void, AppState, null, Action<any>> => async dispatch => {
+    try {
+        
+        dispatch(loadArticlesInProgress());
+        const config = getAxiosConfig(query, page);
+        const articles = await axios.get(API, config)
+            .then((response: AxiosResponse<ArticleSearchResponse>) => {
+                let arr: Article[] = response.data.response.docs;
+                return arr;
+            });
+        dispatch(loadMoreArticlesSuccess(articles, query, page));
+
+    } catch (err) {
+        
+        dispatch(loadArticlesFailed());
+    }
+}
+
 
 const getAxiosConfig = (query: string, page = 0): AxiosRequestConfig => {
     return {
