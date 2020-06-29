@@ -1,20 +1,30 @@
 import React, { SyntheticEvent } from 'react';
 import { FaSearch, FaStar } from "react-icons/fa";
+import { createBrowserHistory } from "history";
+import { Link, Router, useHistory } from 'react-router-dom';
+import { FAVOURITES_ROUTE, HOME_ROUTE } from '../../routes';
 
 interface SearchBarProps {
-    searchArticle: Function
+    searchArticle: Function,
 }
 
 function SearchBar(props: SearchBarProps) {
 
+    let history = useHistory();
+
     let handleSubmit = (event: any) => {
         event.preventDefault();
-        props.searchArticle(event.target.query.value);            
+        if (history.location.pathname !== HOME_ROUTE) {
+            history.push(HOME_ROUTE)
+        }
+        props.searchArticle(event.target.query.value);
     }
 
     let handleBookmarkClick = (event: React.MouseEvent) => {
         event.preventDefault();
-        // TODO: implement 
+        if (history.location.pathname !== FAVOURITES_ROUTE) {
+            history.push(FAVOURITES_ROUTE);
+        }
     }
 
     return (
