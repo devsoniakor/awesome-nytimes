@@ -1,0 +1,57 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended",
+    "tslint-react",
+    "tslint-config-prettier"
+  ],
+  "jsRules": {},
+  "rules": {
+    "object-literal-sort-keys": false,
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-leading-underscore",
+      "allow-pascal-case"
+    ],
+    "interface-over-type-literal": false,
+    "trailing-comma": false,
+    "jsx-key": false,
+    "jsx-no-lambda": false,
+    "max-classes-per-file": [
+      true,
+      1
+    ],
+    "member-access": true,
+    "typedef": [
+      true,
+      "call-signature",
+      "parameter"
+    ],
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "public-static-field",
+          "public-instance-field",
+          "protected-static-field",
+          "protected-instance-field",
+          "private-static-field",
+          "private-instance-field",
+          "public-constructor",
+          "protected-constructor",
+          "private-constructor",
+          "public-static-method",
+          "public-instance-method",
+          "protected-static-method",
+          "protected-instance-method",
+          "private-static-method",
+          "private-instance-method"
+        ]
+      }
+    ],
+    "lines-between-class-members": true
+  },
+  "rulesDirectory": ["node_modules/tslint-lines-between-class-members", "tslint-plugin-prettier" ]
+}
