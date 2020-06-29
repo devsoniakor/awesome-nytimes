@@ -1,5 +1,9 @@
 # Awesome NY Times
 
+This is a simple app you can search NY Times articles by keywords.
+You can add articles to the Favourites list to revisit. 
+Only 30 words in the content will be visible (click 'more' ore just the card).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Some Highlights
@@ -14,12 +18,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 To run this app, 
 
- `npm i
- npm run start`
-
+```console
+ $ npm i
+ $ npm run start
+```
 or 
-
- `yarn start`
-
-
+```console
+ $ yarn start
+```
 
