@@ -17,7 +17,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Deployment
 
 This app has been deployed via **Github page**.
-You can check the production **[app here](https://devsoniakor.github.io/)**
+You can check the production **[app here](https://devsoniakor.github.io/awesome-nytimes/)**
 
 ## To Begin
 
