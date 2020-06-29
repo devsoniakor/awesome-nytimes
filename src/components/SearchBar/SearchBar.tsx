@@ -3,9 +3,12 @@ import { FaSearch, FaStar } from "react-icons/fa";
 import { createBrowserHistory } from "history";
 import { Link, Router, useHistory } from 'react-router-dom';
 import { FAVOURITES_ROUTE, HOME_ROUTE } from '../../routes';
+import { AppState } from '../../store/store';
+import { connect } from 'react-redux';
 
 interface SearchBarProps {
     searchArticle: Function,
+    query: string
 }
 
 function SearchBar(props: SearchBarProps) {
@@ -17,7 +20,12 @@ function SearchBar(props: SearchBarProps) {
         if (history.location.pathname !== HOME_ROUTE) {
             history.push(HOME_ROUTE)
         }
-        props.searchArticle(event.target.query.value);
+        if (event.target.query.value === '') {
+            event.target.classList.add('was-validated');
+        } else {
+            props.searchArticle(event.target.query.value);
+            event.target.classList.remove('was-validated');
+        }
     }
 
     let handleBookmarkClick = (event: React.MouseEvent) => {
@@ -34,28 +42,37 @@ function SearchBar(props: SearchBarProps) {
                 <div className="card bg-light mb-4">
                     <div className="card-body text-center">
                         <form
+                            className="needs-validation"
                             onSubmit={(event: SyntheticEvent) => handleSubmit(event)}>
-                            <div className="input-group input-group-lg">
-                                <input
-                                    type="text"
-                                    placeholder="Search Articles"
-                                    className="form-control"
-                                    name="query"
-                                />
-                                <div className="input-group-append">
-                                    <button type="submit"
-                                        className="btn btn-sm btn-outline-info"
-                                        title="검색"
-                                    >
-                                        <FaSearch />
-                                    </button>
-                                    <button
-                                        className="btn btn-sm btn-outline-info"
-                                        title="즐겨찾기"
-                                        onClick={(e: React.MouseEvent) => handleBookmarkClick(e)}
-                                    >
-                                        <FaStar />
-                                    </button>
+                            <div className="form-row">
+                                <div className="input-group input-group-lg d-inline-flex">
+                                    <input
+                                        type="text"
+                                        placeholder="Search Articles"
+                                        className="form-control"
+                                        name="query"
+                                        defaultValue={props.query} 
+                                        required
+                                    />
+                                    <div className="input-group-append">
+                                        <button type="submit"
+                                            className="btn btn-sm btn-outline-info"
+                                            title="검색"
+                                            formNoValidate 
+                                        >
+                                            <FaSearch />
+                                        </button>
+                                        <button
+                                            className="btn btn-sm btn-outline-info"
+                                            title="즐겨찾기"
+                                            onClick={(e: React.MouseEvent) => handleBookmarkClick(e)}
+                                        >
+                                            <FaStar />
+                                        </button>
+                                    </div>
+                                    <div className="invalid-feedback">
+                                        검색어를 입력해 주세요
+                                    </div>
                                 </div>
                             </div>
                         </form>
@@ -66,4 +83,8 @@ function SearchBar(props: SearchBarProps) {
     );
 }
 
-export default SearchBar;
+const mapStateToProps = (state: AppState) => ({
+    query: state.query
+});
+
+export default connect(mapStateToProps, null)(SearchBar);

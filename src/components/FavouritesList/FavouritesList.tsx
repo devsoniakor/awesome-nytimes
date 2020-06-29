@@ -37,7 +37,6 @@ const FavouritesList: FC<IFavouritesProps> = (props: IFavouritesProps) => {
     );
 
     return (props.favouriteArticles.articles.length > 0 ? content : noContent);
-    // return noContent;
 }
 
 const mapStateToProps = (state: AppState) => ({
