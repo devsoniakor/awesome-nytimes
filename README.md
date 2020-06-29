@@ -14,6 +14,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - useHistory: React Router hook 
 - Responsive design
 
+## Deployment
+
+This app has been deployed via **Github page**.
+You can check the production **[app here](https://devsoniakor.github.io/)**
+
 ## To Begin
 
 To run this app, 
