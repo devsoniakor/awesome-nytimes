@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/awesome-nytimes/static/css/main.07d5f09e.chunk.css",
+    "main.js": "/awesome-nytimes/static/js/main.c28f9fa2.chunk.js",
+    "main.js.map": "/awesome-nytimes/static/js/main.c28f9fa2.chunk.js.map",
+    "runtime-main.js": "/awesome-nytimes/static/js/runtime-main.970c717e.js",
+    "runtime-main.js.map": "/awesome-nytimes/static/js/runtime-main.970c717e.js.map",
+    "static/css/2.e8e2b19f.chunk.css": "/awesome-nytimes/static/css/2.e8e2b19f.chunk.css",
+    "static/js/2.cf1792d7.chunk.js": "/awesome-nytimes/static/js/2.cf1792d7.chunk.js",
+    "static/js/2.cf1792d7.chunk.js.map": "/awesome-nytimes/static/js/2.cf1792d7.chunk.js.map",
+    "index.html": "/awesome-nytimes/index.html",
+    "precache-manifest.e84595f27c80e9a1ce1690118c5e77d2.js": "/awesome-nytimes/precache-manifest.e84595f27c80e9a1ce1690118c5e77d2.js",
+    "service-worker.js": "/awesome-nytimes/service-worker.js",
+    "static/css/2.e8e2b19f.chunk.css.map": "/awesome-nytimes/static/css/2.e8e2b19f.chunk.css.map",
+    "static/css/main.07d5f09e.chunk.css.map": "/awesome-nytimes/static/css/main.07d5f09e.chunk.css.map",
+    "static/js/2.cf1792d7.chunk.js.LICENSE.txt": "/awesome-nytimes/static/js/2.cf1792d7.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.970c717e.js",
+    "static/css/2.e8e2b19f.chunk.css",
+    "static/js/2.cf1792d7.chunk.js",
+    "static/css/main.07d5f09e.chunk.css",
+    "static/js/main.c28f9fa2.chunk.js"
+  ]
+}
