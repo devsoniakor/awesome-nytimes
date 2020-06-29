@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { AppState } from '../store/store';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { findArticle } from '../thunks';
+import FavouritesList from './FavouritesList/FavouritesList';
 
 interface AppProps {
   loadArticles: Function;
@@ -18,6 +19,7 @@ interface AppProps {
       <SearchBar searchArticle={loadArticles}></SearchBar>
       <Router>
          <Route path="/" component={ArticleList}/>
+         <Route path="/favorites" component={FavouritesList}/>
       </Router>
     </div>
   );
