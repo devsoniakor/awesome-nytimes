@@ -1,0 +1,8 @@
+@import '../variables';
+
+.bg-searchbar {
+    @include transition (all, 0.2s, ease-in-out);
+    &:hover {
+        box-shadow: 0 0 10px 1px #21252985;
+    }
+}

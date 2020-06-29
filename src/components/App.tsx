@@ -8,7 +8,6 @@ import { BrowserRouter as Router, Route, Switch, useHistory } from "react-router
 import { findArticle } from '../thunks';
 import FavouritesList from './FavouritesList/FavouritesList';
 import { FAVOURITES_ROUTE, HOME_ROUTE } from '../routes';
-import {withRouter} from 'react-router-dom';
 
 interface AppProps {
   loadArticles: Function;
@@ -18,6 +17,7 @@ const App: FC<AppProps> = (props: AppProps) => {
 
   return (
     <div className="container">
+      <h1 className="text-center my-4">Awesome NY Times</h1>
       <Router>
         <SearchBar searchArticle={props.loadArticles}></SearchBar>
         <Switch>

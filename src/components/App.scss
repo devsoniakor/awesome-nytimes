@@ -1,8 +1,8 @@
+@import './variables';
+
 .App {
   text-align: center;
 }
-
-
 
 .App-header {
   background-color: #282c34;
@@ -26,4 +26,18 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.btn-outline-lovo {
+  color: $color-lovo;
+  border-color: $color-lovo;
+
+  &:hover {
+      color: #fff;
+      background-color: $color-lovo;;
+  }
+}
+
+.text-lovo {
+  color: $color-lovo !important;
 }

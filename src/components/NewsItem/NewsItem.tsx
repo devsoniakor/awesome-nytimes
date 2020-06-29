@@ -47,7 +47,7 @@ function NewsItem(props: NewsItemProps) {
 
     let renderItem = () => {
         return (
-            <div className="card mb-3 table-hover">
+            <div className="card mb-3 news-card">
                 <div className="row no-gutters">
                     {getImage(props.item)}
                     <div className={props.item.multimedia.length ? "col-md-8" : "col"}>
@@ -55,8 +55,8 @@ function NewsItem(props: NewsItemProps) {
                             <div className="d-flex">
                                 <h5 className="card-title flex-grow-1">{props.item.headline.main}</h5>
                                 {props.isFavourite ? 
-                                    <FaStar className="favourit-icon ml-3 mr-0 my-0 text-info" onClick={(_: SyntheticEvent) => handleFavoritClick(props.item, true)} /> : 
-                                    <FaRegStar className="favourit-icon ml-3 mr-0 my-0 text-info" onClick={(_: SyntheticEvent) => handleFavoritClick(props.item, false)} />}
+                                    <FaStar className="favourit-icon ml-3 mr-0 my-0 text-lovo" onClick={(_: SyntheticEvent) => handleFavoritClick(props.item, true)} /> : 
+                                    <FaRegStar className="favourit-icon ml-3 mr-0 my-0 text-lovo" onClick={(_: SyntheticEvent) => handleFavoritClick(props.item, false)} />}
                             </div>
                             {renderCotent(props.item, 30)}
                         </div>

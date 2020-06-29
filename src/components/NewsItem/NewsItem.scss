@@ -1,12 +1,6 @@
-@mixin transition($what: all, $time: 0.2s, $how: ease-in-out) {
-    -webkit-transition: $what $time $how;
-    -moz-transition:    $what $time $how;
-    -ms-transition:     $what $time $how;
-    -o-transition:      $what $time $how;
-    transition:         $what $time $how;
-}
 
-// @include transition ();
+@import '../variables';
+
 .favourit-icon {
     cursor: pointer;
     font-size: 25px !important;
@@ -14,10 +8,23 @@
     left: 0;
     top: 0;
     z-index: 3 !important;
-    
-    @include transition (all, 0.2s, ease);
+    @include transition (all, 0.1s, ease-in);
     &:hover {
-        color: #343a40!important;
-        text-shadow: 0 0 3px #FF0000 !important;
+        -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+        filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+    }
+}
+
+.text-lovo {
+    color: $color-lovo;
+}
+
+.news-card {
+
+    @include transition (all, 0.2s, ease-in-out);
+    &:hover {
+        // box-shadow: 1px 1px 5px;
+        box-shadow: 0 0 15px -4px #21252985
+
     }
 }

@@ -36,7 +36,7 @@ const ArticleList: FC<IArticleListProps> = (props: IArticleListProps) => {
         let arr: JSX.Element[] = [];
         let map = props.favouriteArticles.map;
         props.articles.map(news => {
-            arr.push(<NewsItem key={news._id} item={news} isFavourite={map[news._id]} onFavouritesClicked={handleFavouriteClick}/>)
+            arr.push(<NewsItem key={news._id} item={news} isFavourite={map[news._id]} onFavouritesClicked={handleFavouriteClick} />)
         })
         return arr;
     }
@@ -45,15 +45,15 @@ const ArticleList: FC<IArticleListProps> = (props: IArticleListProps) => {
         switch (props.fetchingStatus) {
             case FETCHING_STATUS.LOADING_IN_PROGRESS:
                 return (
-                    <div className="d-flex justify-content-center my-3">
-                        <Spinner className="m-3" animation="border" variant="primary" />
+                    <div className="d-flex justify-content-center my-3 text-lovo">
+                        <Spinner className="m-3" animation="border"/>
                     </div>
                 );
             case FETCHING_STATUS.FETCHING_DONE:
                 if (props.articles.length > 0) {
                     return (
                         <div className="d-flex justify-content-center my-3">
-                            <button type="button" className="btn btn-outline-primary mx-auto my-3" onClick={(event: SyntheticEvent) => handleClick(event)}><AiOutlineReload /> Load More</button>
+                            <button type="button" className="btn btn-outline-lovo mx-auto my-3" onClick={(event: SyntheticEvent) => handleClick(event)}><AiOutlineReload /> 기사 더 불러오기</button>
                         </div>
                     );
                 }
@@ -63,11 +63,21 @@ const ArticleList: FC<IArticleListProps> = (props: IArticleListProps) => {
         }
     }
 
-    const loadingMessage = <div>Loading Articles...</div>;
+    const loadingMessage = (
+        <div className="list-wrapper">
+            <div className="row justify-content-center">
+                <div className="col-lg-8 text-center my-3 text-lovo">
+                    <Spinner className="m-3 text-lovo" animation="border" />
+                    <br/>
+                    <strong>기사를 불러오는 중입니다</strong>
+                </div>
+            </div>
+        </div>
+    );
     const content = (
         <div className="list-wrapper">
             <div className="row justify-content-center">
-                <div className="col-md-8">
+                <div className="col-lg-8">
                     {renderItems()}
                     {renderButton()}
                 </div>

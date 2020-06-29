@@ -1,10 +1,10 @@
 import React, { SyntheticEvent } from 'react';
 import { FaSearch, FaStar } from "react-icons/fa";
-import { createBrowserHistory } from "history";
-import { Link, Router, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { FAVOURITES_ROUTE, HOME_ROUTE } from '../../routes';
 import { AppState } from '../../store/store';
 import { connect } from 'react-redux';
+import './SearchBar.scss'
 
 interface SearchBarProps {
     searchArticle: Function,
@@ -37,9 +37,8 @@ function SearchBar(props: SearchBarProps) {
 
     return (
         <div className="row justify-content-center">
-            <div className="col-md-8">
-                <h1 className="font-weight-light text-center">Awesome NY Times</h1>
-                <div className="card bg-light mb-4">
+            <div className="col-lg-8">
+                <div className="card bg-searchbar mb-4">
                     <div className="card-body text-center">
                         <form
                             className="needs-validation"
@@ -56,14 +55,14 @@ function SearchBar(props: SearchBarProps) {
                                     />
                                     <div className="input-group-append">
                                         <button type="submit"
-                                            className="btn btn-sm btn-outline-info"
+                                            className="btn btn-sm btn-outline-lovo"
                                             title="검색"
                                             formNoValidate 
                                         >
                                             <FaSearch />
                                         </button>
                                         <button
-                                            className="btn btn-sm btn-outline-info"
+                                            className="btn btn-sm btn-outline-lovo"
                                             title="즐겨찾기"
                                             onClick={(e: React.MouseEvent) => handleBookmarkClick(e)}
                                         >
