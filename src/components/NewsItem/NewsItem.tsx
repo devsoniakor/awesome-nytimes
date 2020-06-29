@@ -79,6 +79,7 @@ function NewsItem(props: NewsItemProps): JSX.Element {
                 {props.isFavourite ? (
                   <FaStar
                     className="favourit-icon ml-3 mr-0 my-0 text-lovo"
+                    title="즐겨찾기 취소"
                     onClick={(_: SyntheticEvent): void | undefined =>
                       handleFavoritClick(props.item, true)
                     }
@@ -86,6 +87,7 @@ function NewsItem(props: NewsItemProps): JSX.Element {
                 ) : (
                   <FaRegStar
                     className="favourit-icon ml-3 mr-0 my-0 text-lovo"
+                    title="즐겨찾기에 추가하기"
                     onClick={(_: SyntheticEvent): void | undefined =>
                       handleFavoritClick(props.item, false)
                     }

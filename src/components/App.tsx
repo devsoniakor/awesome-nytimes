@@ -29,16 +29,18 @@ type AppProps = PropsFromRedux & {
 
 const App: FC<AppProps> = (props: AppProps): JSX.Element => {
   return (
-    <div className="container">
-      <h1 className="text-center my-4">Awesome NY Times</h1>
-      <Router>
-        <SearchBar searchArticle={props.loadArticles} />
-        <Switch>
-          <Route path={FAVOURITES_ROUTE} component={FavouritesList} />
-          <Route path={HOME_ROUTE} component={ArticleList} />
-        </Switch>
-      </Router>
-    </div>
+    <span>
+      <h1 className="text-center py-5 header mb-2">Awesome NY Times</h1>
+      <div className="container">
+        <Router>
+          <SearchBar searchArticle={props.loadArticles} />
+          <Switch>
+            <Route path={FAVOURITES_ROUTE} component={FavouritesList} />
+            <Route path={HOME_ROUTE} component={ArticleList} />
+          </Switch>
+        </Router>
+      </div>
+    </span>
   );
 };
 
