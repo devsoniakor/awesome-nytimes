@@ -41,3 +41,24 @@ export enum FETCHING_STATUS  {
 }
 
 export type ArticleActionType = LoadArticleAction | LoadArticleInProgressAction | LoadArticlesSuccess | LoadArticlesFailed | FindArticleSuccess | FindArticleInProgressAction;
+
+
+export const ADD_TO_FAVOURITES = 'ADD_TO_FAVOURITES';
+export const REMOVE_FAVOURITE = 'REMOVE_FAVOURITE';
+
+interface AddToFavourites {
+    type: typeof ADD_TO_FAVOURITES
+    payload: { article: Article }
+}
+
+interface RemoveFavourite {
+    type: typeof REMOVE_FAVOURITE
+    payload: { id: string }
+}
+
+export type Favourites = {
+    articles: Article[],
+    map: {[key: string]: boolean}
+}
+
+export type FavouritesActionType = AddToFavourites | RemoveFavourite;

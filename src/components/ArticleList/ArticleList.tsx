@@ -5,30 +5,38 @@ import { connect } from 'react-redux';
 import { AppState } from '../../store/store';
 import { AiOutlineReload } from 'react-icons/ai';
 import { loadMoreArticle } from '../../thunks';
-import { FETCHING_STATUS } from '../../store/types';
+import { FETCHING_STATUS, Favourites } from '../../store/types';
 import Spinner from 'react-bootstrap/Spinner';
-import { FaRegStar } from "react-icons/fa";
+import { addToFavourites, removeFavourite } from '../../store/actions';
+import { query, page } from '../../store/reducers';
 
 interface IArticleListProps {
     articles: Article[],
+    favouriteArticles: Favourites,
     fetchingStatus: FETCHING_STATUS,
     loadMoreArticle: Function,
+    removeFavourite: Function,
+    addToFavourite: Function,
     page: number,
     query: string
 }
 
 const ArticleList: FC<IArticleListProps> = (props: IArticleListProps) => {
 
-    let handleClick = (event: any) => {
+    let handleClick = (event: SyntheticEvent) => {
         event.preventDefault();
-
         props.loadMoreArticle(props.query, props.page);
+    }
+
+    let handleFavouriteClick = (article: Article, isFavourite: boolean) => {
+        isFavourite ? props.removeFavourite(article._id) : props.addToFavourite(article)
     }
 
     let renderItems = (): JSX.Element[] => {
         let arr: JSX.Element[] = [];
+        let map = props.favouriteArticles.map;
         props.articles.map(news => {
-            arr.push(<NewsItem key={news._id} item={news} />)
+            arr.push(<NewsItem key={news._id} item={news} isFavourite={map[news._id]} onFavouritesClicked={handleFavouriteClick}/>)
         })
         return arr;
     }
@@ -81,11 +89,14 @@ const mapStateToProps = (state: AppState) => ({
     articles: state.articles,
     page: state.page,
     query: state.query,
-    fetchingStatus: state.fetchingStatus
+    fetchingStatus: state.fetchingStatus,
+    favouriteArticles: state.favourites,
 });
 
 const mapDispatchToProps = (dispatch: any) => ({
-    loadMoreArticle: (query: string, page: number) => dispatch(loadMoreArticle(query, page))
+    loadMoreArticle: (query: string, page: number) => dispatch(loadMoreArticle(query, page)),
+    addToFavourite: (article: Article) => dispatch(addToFavourites(article)),
+    removeFavourite: (id: string) => dispatch(removeFavourite(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArticleList);

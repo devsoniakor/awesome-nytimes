@@ -1,10 +1,12 @@
 import React, { SyntheticEvent } from 'react';
 import { Article, MediaItem } from '../../store/models';
-import { FaRegStar } from "react-icons/fa";
+import { FaRegStar, FaStar } from "react-icons/fa";
 import './NewsItem.scss';
 
 interface NewsItemProps {
-    item: Article;
+    item: Article,
+    onFavouritesClicked: Function,
+    isFavourite: boolean,
 }
 
 function NewsItem(props: NewsItemProps) {
@@ -52,7 +54,9 @@ function NewsItem(props: NewsItemProps) {
                         <div className="card-body">
                             <div className="d-flex">
                                 <h5 className="card-title flex-grow-1">{props.item.headline.main}</h5>
-                                <FaRegStar className="favourit-icon ml-3 mr-0 my-0 text-info" onClick={(event: SyntheticEvent) => handleFavoritClick(event)} />
+                                {props.isFavourite ? 
+                                    <FaStar className="favourit-icon ml-3 mr-0 my-0 text-info" onClick={(_: SyntheticEvent) => handleFavoritClick(props.item, true)} /> : 
+                                    <FaRegStar className="favourit-icon ml-3 mr-0 my-0 text-info" onClick={(_: SyntheticEvent) => handleFavoritClick(props.item, false)} />}
                             </div>
                             {renderCotent(props.item, 30)}
                         </div>
@@ -62,10 +66,8 @@ function NewsItem(props: NewsItemProps) {
         ) 
     }
 
-    let handleFavoritClick = (event: any) => {
-        event.preventDefault();
-
-        console.log('Icon clicked!!!')
+    let handleFavoritClick = (item: Article, isFavourite: boolean) => {
+        props.onFavouritesClicked(item, isFavourite);
     }
 
     return (
